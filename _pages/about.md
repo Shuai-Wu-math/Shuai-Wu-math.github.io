@@ -7,7 +7,8 @@ redirect_from:
   - /about.html
 ---
 
-I'm a Phd from School of Mathematical Sciences, Beijing Normal University. My research interest includes spectral methods, spectral element mathods, singularity problem of differential equations .
+## About Me 
+I am a Ph.D. student in Computational Mathematics at Beijing Normal University. My research interests lie in numerical partial differential equations. 
 
 ## Education
 
@@ -18,3 +19,18 @@ I'm a Phd from School of Mathematical Sciences, Beijing Normal University. My re
 - **B.S. in Mathematics and Applied Mathematics**  
   Beijing Normal University, Beijing, China  
   2020 – 2024
+  
+## Research Interests  
+- Spectral methods for differential equations
+- Singularity problem of differential equations
+- Partial differential equations in complex domain
+
+## Publications  
+*(Optional: Include only if you have papers, even preprints or conference submissions. If none yet, skip this section or write:)*  
+- *No publications yet, but working on my first paper as part of my Ph.D. research.*
+
+## Skills  
+- **Programming**: MATLAB  
+- **Tools**: LaTeX, Git  
+- **Languages**: Chinese (native), English (fluent)
+
