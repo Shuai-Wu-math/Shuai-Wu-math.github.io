@@ -67,22 +67,15 @@ section {
 }
 
 /* --- 导航栏 --- */
-nav {
-    border-top: 1px solid #eee;
-    border-bottom: 1px solid #eee;
-    padding: 10px 0;
-    margin: 20px 0;
-}
 nav ul {
     list-style: none;
     padding: 0;
     margin: 0;
-    display: block !important; /* 强制覆盖可能的 flex */
-    justify-content: flex-start; /* 左对齐 */
-    gap: 20px; /* 链接之间的间距 */
+    display: block !important; /* 强制块级显示 */
 }
 nav ul li {
-    margin-bottom: 0; /* 移除垂直间距 */
+    display: block;
+    margin-bottom: 10px; /* 链接之间的垂直间距 */
 }
 nav a {
     font-weight: bold;
