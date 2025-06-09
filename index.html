@@ -1,1 +1,205 @@
-<hl>欢迎来到我的主页<hl>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="你的名字">
+    <meta name="description" content="[你的名字]的个人学术主页，包含研究兴趣、学术出版物和项目。">
+
+    <title>你的名字 - 学术主页</title>
+
+    <style>
+        /* --- 全局样式 --- */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+            line-height: 1.6;
+            color: #333;
+            background-color: #fdfdfd;
+            max-width: 800px; /* 内容最大宽度，保护视力 */
+            margin: 0 auto; /* 居中显示 */
+            padding: 20px;
+        }
+
+        /* --- 链接样式 --- */
+        a {
+            color: #0056b3; /* 专业的蓝色 */
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* --- 标题样式 --- */
+        h1, h2 {
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+            margin-top: 40px;
+        }
+        h1 {
+            font-size: 2.5em;
+            margin-top: 0;
+            border-bottom: 2px solid #333;
+        }
+        h2 {
+            font-size: 1.8em;
+        }
+
+        /* --- 区域间距 --- */
+        section {
+            margin-bottom: 40px;
+        }
+
+        /* --- 导航栏 --- */
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+            display: flex;
+            flex-wrap: wrap; /* 在小屏幕上换行 */
+            gap: 20px; /* 导航项之间的间距 */
+        }
+        nav a {
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+        
+        /* --- 出版物列表样式 --- */
+        .publications-list {
+            list-style: none;
+            padding-left: 0;
+        }
+        .publications-list li {
+            margin-bottom: 15px;
+            padding-left: 20px;
+            position: relative;
+        }
+        .publications-list li::before {
+            content: "▪"; /* 项目符号 */
+            position: absolute;
+            left: 0;
+            color: #555;
+        }
+        .publication-authors {
+            font-style: italic;
+            color: #555;
+        }
+        .publication-venue {
+            font-weight: bold;
+        }
+        .publication-links a {
+            margin-right: 15px;
+        }
+
+        /* --- 页脚 --- */
+        footer {
+            text-align: center;
+            margin-top: 60px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            font-size: 0.9em;
+            color: #777;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>你的名字 (Your Name)</h1>
+        <p>博士研究生 | [你的研究领域] <br>
+           [你的大学/机构名称]</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#about">关于我</a></li>
+            <li><a href="#research">研究兴趣</a></li>
+            <li><a href="#publications">学术出版</a></li>
+            <li><a href="#projects">项目/软件</a></li>
+            <li><a href="#cv">个人简历</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="about">
+            <h2>关于我 (About Me)</h2>
+            <p>
+                在这里写一段关于你自己的简介。例如：我是一名就读于[你的大学]的博士生，专注于[具体研究方向]。
+                我的研究旨在解决[某某问题]，主要使用[某某方法]。我对开源技术充满热情，并乐于分享知识。
+            </p>
+        </section>
+
+        <section id="research">
+            <h2>研究兴趣 (Research Interests)</h2>
+            <ul>
+                <li>研究方向一 (e.g., 计算语言学)</li>
+                <li>研究方向二 (e.g., 机器学习)</li>
+                <li>研究方向三 (e.g., 人机交互)</li>
+            </ul>
+        </section>
+
+        <section id="publications">
+            <h2>学术出版 (Publications)</h2>
+            <p>(* 代表通讯作者, # 代表同等贡献)</p>
+            <ul class="publications-list">
+                <li>
+                    <div class="publication-title">论文的完整标题放在这里</div>
+                    <div class="publication-authors">作者一, <strong>你的名字</strong>, 作者三</div>
+                    <div class="publication-venue">
+                        <em>期刊或会议名称</em>, 年份
+                    </div>
+                    <div class="publication-links">
+                        <a href="你的DOI链接" target="_blank">[DOI]</a>
+                        <a href="你的PDF链接" target="_blank">[PDF]</a>
+                        <a href="你的代码仓库链接" target="_blank">[Code]</a>
+                        <a href="你的项目主页链接" target="_blank">[Project Page]</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="publication-title">另一篇论文的标题</div>
+                    <div class="publication-authors">作者A, 作者B, <strong>你的名字*</strong></div>
+                    <div class="publication-venue">
+                        <em>另一个会议的名称</em>, 年份
+                    </div>
+                    <div class="publication-links">
+                        <a href="#" target="_blank">[DOI]</a>
+                        <a href="#" target="_blank">[PDF]</a>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+        <section id="projects">
+            <h2>项目/软件 (Projects / Software)</h2>
+            <ul>
+                <li>
+                    <strong><a href="项目链接" target="_blank">项目名称一</a></strong>: 一段关于这个项目的简短描述，说明它的功能和使用的技术。
+                </li>
+                <li>
+                    <strong><a href="项目链接" anget="_blank">项目名称二</a></strong>: 另一个项目的描述。
+                </li>
+            </ul>
+        </section>
+
+        <section id="cv">
+            <h2>个人简历 (CV)</h2>
+            <p>
+                你可以在这里下载我的最新简历： <a href="你的简历PDF文件链接" target="_blank">下载简历 (Download CV)</a>
+            </p>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>
+            &copy; 2025 你的名字. 
+            <br>
+            <a href="你的Google Scholar链接">Google Scholar</a> | 
+            <a href="你的LinkedIn链接">LinkedIn</a> | 
+            <a href="你的GitHub链接">GitHub</a> |
+            <a href="mailto:你的邮箱地址">Email</a>
+        </p>
+    </footer>
+
+</body>
+</html>
