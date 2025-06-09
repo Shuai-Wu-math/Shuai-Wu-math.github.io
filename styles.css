@@ -106,7 +106,7 @@ footer {
 }
 .profile-photo {
     width: 120px; /* 调整照片大小 */
-    height: 120px;
+    height: 169px;
     object-fit: cover; /* 确保照片填充 */
     margin-left: 20px; /* 与文本的间距 */
 }
