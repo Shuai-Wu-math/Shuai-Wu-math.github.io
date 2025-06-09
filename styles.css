@@ -77,8 +77,8 @@ nav ul {
     list-style: none;
     padding: 0;
     margin: 0;
-    display: flex; /* 使用 Flexbox 实现水平导航 */
-    justify-content: center; /* 居中对齐 */
+    display: block !important; /* 强制覆盖可能的 flex */
+    justify-content: flex-start; /* 左对齐 */
     gap: 20px; /* 链接之间的间距 */
 }
 nav ul li {
