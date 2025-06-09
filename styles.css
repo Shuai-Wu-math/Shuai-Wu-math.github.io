@@ -51,7 +51,7 @@ nav ul li {
 }
 nav a {
     font-weight: bold;
-    font-size: 1.1em;
+    font-size: 50px;
 }
 
 /* --- 出版物列表样式 --- */
@@ -112,5 +112,5 @@ footer {
 }
 
 p {
-    font-size: 28px;
+    font-size: 50px;
 }
