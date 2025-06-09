@@ -13,25 +13,52 @@ body {
 a {
     color: #0056b3;
     text-decoration: none;
+    transition: color 0.3s;
 }
 a:hover {
-    text-decoration: underline;
+    color: #007bff;
+    text-decoration: none;
 }
 
-/* --- 标题样式 --- */
-h1, h2 {
-    border-bottom: 1px solid #eee;
-    padding-bottom: 10px;
-    margin-top: 40px;
+/* --- 头部布局与样式 --- */
+header {
+    margin-bottom: 40px;
+}
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap; /* 在小屏幕上换行 */
+}
+.header-text {
+    flex: 1;
 }
 h1 {
     font-size: 2.5em;
     margin-top: 0;
-    border-bottom: 2px solid #333;
+    margin-bottom: 10px;
+    border-bottom: none; /* 移除 h1 的下边框，使其更简洁 */
 }
+.affiliation {
+    font-size: 1.2em; /* 调整了头衔的字体大小 */
+    color: #666;
+    margin: 0;
+}
+.profile-photo {
+    width: 130px; /* 稍微增大照片尺寸 */
+    height: auto; /* 高度自动，保持比例 */
+    margin-left: 30px;
+    border: 1px solid #eee;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05); /* 添加细微阴影 */
+}
+
+/* --- 区域标题 --- */
 h2 {
     font-size: 1.8em;
     font-weight: 700;
+    border-bottom: 2px solid #eee; /* 统一标题下边框样式 */
+    padding-bottom: 10px;
+    margin-top: 40px;
 }
 
 /* --- 区域间距 --- */
@@ -40,21 +67,42 @@ section {
 }
 
 /* --- 导航栏 --- */
+nav {
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    padding: 10px 0;
+    margin: 20px 0;
+}
 nav ul {
     list-style: none;
     padding: 0;
-    margin: 20px 0;
-    display: block;
+    margin: 0;
+    display: flex; /* 使用 Flexbox 实现水平导航 */
+    justify-content: center; /* 居中对齐 */
+    gap: 20px; /* 链接之间的间距 */
 }
 nav ul li {
-    margin-bottom: 10px; /* 每行间距 */
+    margin-bottom: 0; /* 移除垂直间距 */
 }
 nav a {
     font-weight: bold;
-    font-size: 50px;
+    font-size: 1.1em; /* 合理的导航字体大小 */
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+nav a:hover {
+    background-color: #f0f0f0;
+    color: #0056b3;
 }
 
-/* --- 出版物列表样式 --- */
+/* --- 正文段落 --- */
+p {
+    font-size: 1.1em; /* 合理的正文字体大小 */
+    color: #444;
+}
+
+/* --- 出版物列表样式 (保持不变，用于其他页面) --- */
 .publications-list {
     list-style: none;
     padding-left: 0;
@@ -80,6 +128,10 @@ nav a {
 .publication-links a {
     margin-right: 15px;
 }
+.highlight {
+    font-weight: bold;
+    color: #0056b3;
+}
 
 /* --- 页脚 --- */
 footer {
@@ -89,29 +141,4 @@ footer {
     border-top: 1px solid #eee;
     font-size: 0.9em;
     color: #777;
-}
-
-.highlight {
-    font-weight: bold;
-    color: #0056b3;
-}
-
-.header-content {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-.header-text {
-    flex: 1;
-}
-.profile-photo {
-    width: 120px; /* 照片宽度 */
-    height: 169px; /* 照片高度 */
-    object-fit: contain; /* 保持照片比例，不裁剪 */
-    margin-left: 20px; /* 与文本的间距 */
-    border-radius: 0; /* 移除圆形效果，显示矩形 */
-}
-
-p {
-    font-size: 30px;
 }
