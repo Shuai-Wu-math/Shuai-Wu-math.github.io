@@ -105,10 +105,11 @@ footer {
     flex: 1;
 }
 .profile-photo {
-    width: 120px; /* 调整照片大小 */
-    height: 169px;
-    object-fit: cover; /* 确保照片填充 */
+    width: 120px; /* 照片宽度 */
+    height: 169px; /* 照片高度 */
+    object-fit: contain; /* 保持照片比例，不裁剪 */
     margin-left: 20px; /* 与文本的间距 */
+    border-radius: 0; /* 移除圆形效果，显示矩形 */
 }
 
 p {
