@@ -1,0 +1,194 @@
+% Setting up the document class for a clean, professional look
+\documentclass[11pt, a4paper]{article}
+
+% Including essential packages for formatting, mathematics, images, pseudocode, and tables
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath, amsthm, amssymb}
+\usepackage{geometry}
+\usepackage{titling}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\usepackage{parskip}
+\usepackage{graphicx}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{booktabs} % For professional-looking tables
+
+% Configuring page geometry for balanced margins
+\geometry{margin=1in}
+
+% Defining custom theorem-like environments
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{property}[theorem]{Property}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{remark}[theorem]{Remark}
+
+% Ensuring all environments use black, upright font
+\let\oldtheorem\theorem
+\renewcommand{\theorem}{\oldtheorem\upshape\color{black}}
+\let\oldlemma\lemma
+\renewcommand{\lemma}{\oldlemma\upshape\color{black}}
+\let\oldproposition\proposition
+\renewcommand{\proposition}{\oldproposition\upshape\color{black}}
+\let\oldcorollary\corollary
+\renewcommand{\corollary}{\oldcorollary\upshape\color{black}}
+\let\olddefinition\definition
+\renewcommand{\definition}{\olddefinition\upshape\color{black}}
+\let\oldproperty\property
+\renewcommand{\property}{\oldproperty\upshape\color{black}}
+\let\oldexample\example
+\renewcommand{\example}{\oldexample\upshape\color{black}}
+\let\oldremark\remark
+\renewcommand{\remark}{\oldremark\upshape\color{black}}
+
+% Setting up header and footer
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\thetitle} % Display document title in header
+\fancyhead[R]{\thepage}
+
+% Configuring hyperlinks
+\hypersetup{
+	colorlinks=true,
+	linkcolor=blue,
+	urlcolor=blue,
+	citecolor=blue
+}
+
+% Setting up title and author
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1em}
+\author{Your Name}
+\title{Mathematical Notes}
+
+% Configuring font package (loaded last as per guidelines)
+\usepackage{newtxtext, newtxmath}
+
+\begin{document}
+	
+	% Creating title page with summary at the bottom and revision date
+	\begin{titlepage}
+		\centering
+		\vspace*{2cm}
+		{\Huge\bfseries \thetitle \par}
+		\vspace{1cm}
+		{\Large \theauthor \par}
+		\vspace{0.5cm}
+		{\large Last revised at 2025/6/10 \par}
+		\vspace{3.5cm} % Adjusted vertical space to maintain summary position
+		{\large\bfseries Summary \par}
+		\vspace{0.5cm}
+		This document provides a structured template for mathematical notes, including definitions, theorems, lemmas, properties, examples, pseudocode, tables, and images. The content is organized to facilitate clear understanding and reference, with a focus on mathematical rigor and aesthetic presentation.
+	\end{titlepage}
+	
+	% Adding main content sections
+	\section{Introduction}
+	This section introduces the main topics covered in the notes. You can provide an overview of the subject matter here.
+	
+	\section{Definitions and Properties}
+	\begin{definition}
+		A group is a set \( G \) equipped with a binary operation \( \cdot \) that satisfies the following axioms:
+		\begin{enumerate}[label=\roman*.]
+			\item Closure: For all \( a, b \in G \), \( a \cdot b \in G \).
+			\item Associativity: For all \( a, b, c \in G \), \( (a \cdot b) \cdot c = a \cdot (b \cdot c) \).
+			\item Identity: There exists an element \( e \in G \) such that for all \( a \in G \), \( e \cdot a = a \cdot e = a \).
+			\item Inverse: For each \( a \in G \), there exists an element \( b \in G \) such that \( a \cdot b = b \cdot a = e \).
+		\end{enumerate}
+	\end{definition}
+	
+	\begin{property}
+		Every group has a unique identity element.
+	\end{property}
+	
+	\section{Theorems and Proofs}
+	\begin{theorem}
+		Let \( G \) be a group. Then the identity element \( e \) in \( G \) is unique.
+	\end{theorem}
+	\begin{proof}
+		Suppose \( e \) and \( e' \) are both identity elements in \( G \). Then, for all \( a \in G \), we have \( e \cdot a = a \) and \( a \cdot e' = a \). Consider \( e \cdot e' \). Since \( e \) is an identity, \( e \cdot e' = e' \). Since \( e' \) is an identity, \( e \cdot e' = e \). Thus, \( e = e' \), proving the identity is unique.
+	\end{proof}
+	
+	\begin{lemma}
+		In any group \( G \), the inverse of each element is unique.
+	\end{lemma}
+	\begin{proof}
+		Let \( a \in G \) have two inverses \( b \) and \( c \). Then \( a \cdot b = e \) and \( a \cdot c = e \). Multiply both sides of \( a \cdot b = e \) by \( c \) on the right: \( (a \cdot b) \cdot c = e \cdot c = c \). By associativity, \( a \cdot (b \cdot c) = c \). Since \( a \cdot c = e \), we have \( a \cdot (b \cdot c) = e \). Thus, \( b \cdot c \) is an inverse of \( a \). Since \( b \) is an inverse, \( b \cdot c = b \). Multiply both sides by the inverse of \( b \): \( c = b \), so the inverse is unique.
+	\end{proof}
+	
+	\begin{example}
+		Consider the group \( (\mathbb{Z}, +) \). The identity element is \( 0 \), and the inverse of any integer \( a \) is \( -a \), since \( a + (-a) = 0 \).
+	\end{example}
+	
+	\begin{remark}
+		The concepts introduced here can be extended to other algebraic structures, such as rings and fields.
+	\end{remark}
+	
+	\section{Pseudocode Example}
+	\begin{algorithm}
+		\caption{Group Element Inverse Check}
+		\begin{algorithmic}[1]
+			\Procedure{FindInverse}{$a, G, \cdot, e$}
+			\For{each $b \in G$}
+			\If{$a \cdot b = e$ and $b \cdot a = e$}
+			\State \Return $b$
+			\EndIf
+			\EndFor
+			\State \Return \text{None}
+			\EndProcedure
+		\end{algorithmic}
+	\end{algorithm}
+	
+	\section{Table Example}
+	\begin{table}[h]
+		\centering
+		\caption{Properties of Common Groups}
+		\begin{tabular}{lcc}
+			\toprule
+			Group & Identity Element & Inverse of $a$ \\
+			\midrule
+			\( (\mathbb{Z}, +) \) & 0 & $-a$ \\
+			\( (\mathbb{R}^*, \cdot) \) & 1 & $1/a$ \\
+			\( (S_n, \circ) \) & Identity permutation & Inverse permutation \\
+			\bottomrule
+		\end{tabular}
+		\label{tab:group_properties}
+	\end{table}
+	
+	\section{Image Inclusion Examples}
+	% Single image example
+	\begin{figure}[h]
+		\centering
+		% Replace 'example-image' with your image file name (e.g., 'group_diagram.png')
+		\includegraphics[width=0.5\textwidth]{example-image}
+		\caption{A diagram illustrating a group structure.}
+		\label{fig:group_diagram}
+	\end{figure}
+	
+	% Two images side by side
+	\begin{figure}[h]
+		\centering
+		\begin{minipage}{0.45\textwidth}
+			\centering
+			\includegraphics[width=\textwidth]{example-image-a}
+			\caption{First group diagram.}
+			\label{fig:group_diagram_a}
+		\end{minipage}\hfill
+		\begin{minipage}{0.45\textwidth}
+			\centering
+			\includegraphics[width=\textwidth]{example-image-b}
+			\caption{Second group diagram.}
+			\label{fig:group_diagram_b}
+		\end{minipage}
+	\end{figure}
+	
+\end{document}
