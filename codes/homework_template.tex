@@ -1,0 +1,232 @@
+% Setting up the document class and basic layout
+\documentclass[11pt, a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\geometry{margin=1in}
+
+% Including essential packages for formatting and content
+\usepackage{amsmath, amssymb, mathtools}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{enumitem}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+
+% Defining code listing styles with enhanced indentation
+\lstset{
+	basicstyle=\ttfamily\small,
+	breaklines=true,
+	breakatwhitespace=true,
+	breakindent=10pt,
+	breakautoindent=true,
+	frame=single,
+	numbers=left,
+	numberstyle=\tiny,
+	keywordstyle=\color{blue},
+	stringstyle=\color{red},
+	commentstyle=\color{gray},
+	showstringspaces=false,
+	tabsize=4,
+	keepspaces=true,
+	columns=flexible
+}
+
+% Defining language-specific styles
+\lstdefinelanguage{Python}{
+	keywords={def, return, if, else, for, while, in, print, import},
+	morecomment=[l]{\#}
+}
+\lstdefinelanguage{MATLAB}{
+	keywords={function, end, if, else, for, while},
+	morecomment=[l]{\%}
+}
+\lstdefinelanguage{C}{
+	keywords={int, void, return, if, else, for, while},
+	morecomment=[l]{//}
+}
+
+% Setting up font package last
+\usepackage{lmodern}
+
+% Title and header setup
+\title{Homework Assignment Template}
+\author{Your Name}
+\date{\today}
+
+\begin{document}
+	
+	\maketitle
+	
+	\section*{Homework Assignment}
+	
+	% Question 1
+	\subsection*{Question 1: Basic Arithmetic Function}
+	Implement a function that calculates the sum of squares of numbers from 1 to $n$.
+	
+	\subsubsection*{Solution}
+	\begin{itemize}
+		\item \textbf{Python Code:}
+		\begin{lstlisting}[language=Python]
+def sum_of_squares(n):
+total = 0
+for i in range(1, n + 1):
+total += i ** 2
+return total
+		\end{lstlisting}
+		\item \textbf{MATLAB Code:}
+		\begin{lstlisting}[language=MATLAB]
+function result = sumOfSquares(n)
+result = sum((1:n).^2);
+end
+		\end{lstlisting}
+		\item \textbf{C Code:}
+		\begin{lstlisting}[language=C]
+int sumOfSquares(int n) {
+	int total = 0;
+	for (int i = 1; i <= n; i++) {
+		total += i * i;
+	}
+	return total;
+}
+		\end{lstlisting}
+	\end{itemize}
+	
+	% Question 2
+	\subsection*{Question 2: Matrix Operations}
+	Write a program to compute the transpose of a given matrix.
+	
+	\subsubsection*{Solution}
+	\begin{itemize}
+		\item \textbf{Python Code:}
+		\begin{lstlisting}[language=Python]
+def transpose_matrix(matrix):
+return [[matrix[j][i] for j in range(len(matrix))] for i in range(len(matrix[0]))]
+		\end{lstlisting}
+		\item \textbf{MATLAB Code:}
+		\begin{lstlisting}[language=MATLAB]
+function result = transposeMatrix(matrix)
+result = matrix';
+end
+		\end{lstlisting}
+		\item \textbf{C Code:}
+		\begin{lstlisting}[language=C]
+void transposeMatrix(int rows, int cols, int matrix[rows][cols], int result[cols][rows]) {
+	for (int i = 0; i < rows; i++) {
+		for (int j = 0; j < cols; j++) {
+			result[j][i] = matrix[i][j];
+		}
+	}
+}
+		\end{lstlisting}
+	\end{itemize}
+	
+	% Question 3 with Table Example
+	\subsection*{Question 3: Data Analysis}
+	Create a table to summarize the performance metrics of an algorithm (e.g., time and accuracy).
+	
+	\subsubsection*{Solution}
+	Below is a sample table summarizing performance metrics:
+	\begin{table}[h]
+		\centering
+		\caption{Algorithm Performance Metrics}
+		\begin{tabular}{lcc}
+			\toprule
+			\textbf{Algorithm} & \textbf{Execution Time (s)} & \textbf{Accuracy (\%)} \\
+			\midrule
+			Algorithm A & 0.25 & 95.3 \\
+			Algorithm B & 0.30 & 92.1 \\
+			Algorithm C & 0.18 & 97.2 \\
+			\bottomrule
+		\end{tabular}
+	\end{table}
+	
+	% Question 4 with Image Example
+	\subsection*{Question 4: Image Processing}
+	Describe an algorithm to process two images side by side.
+	
+	\subsubsection*{Solution}
+	Below are two sample images displayed side by side:
+	\begin{figure}[h]
+		\centering
+		\begin{subfigure}{0.45\textwidth}
+			\centering
+			\includegraphics[width=\linewidth]{example-image-a}
+			\caption{Image A}
+		\end{subfigure}
+		\hfill
+		\begin{subfigure}{0.45\textwidth}
+			\centering
+			\includegraphics[width=\linewidth]{example-image-b}
+			\caption{Image B}
+		\end{subfigure}
+		\caption{Side-by-side comparison of two images.}
+	\end{figure}
+	
+	\begin{itemize}
+		\item \textbf{Python Code (Image Processing Placeholder):}
+		\begin{lstlisting}[language=Python]
+import cv2
+def process_image(image):
+# Placeholder for image processing
+return cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+		\end{lstlisting}
+	\end{itemize}
+	
+	% Question 5 with Pseudocode Example
+	\subsection*{Question 5: Sorting Algorithm}
+	Implement a sorting algorithm and provide its pseudocode.
+	
+	\subsubsection*{Solution}
+	Below is the pseudocode for QuickSort:
+	\begin{algorithm}
+		\caption{QuickSort Algorithm}
+		\begin{algorithmic}
+			\Procedure{QuickSort}{array, low, high}
+			\If{low < high}
+			\State pivotIndex $\gets$ \Call{Partition}{array, low, high}
+			\State \Call{QuickSort}{array, low, pivotIndex - 1}
+			\State \Call{QuickSort}{array, pivotIndex + 1, high}
+			\EndIf
+			\EndProcedure
+			\Procedure{Partition}{array, low, high}
+			\State pivot $\gets$ array[high]
+			\State i $\gets$ low - 1
+			\For{j $\gets$ low \textbf{to} high - 1}
+			\If{array[j] $\leq$ pivot}
+			\State i $\gets$ i + 1
+			\State Swap array[i] and array[j]
+			\EndIf
+			\EndFor
+			\State Swap array[i využivané + 1] and array[high]
+			\State \Return i + 1
+			\EndProcedure
+		\end{algorithmic}
+	\end{algorithm}
+	
+	\begin{itemize}
+		\item \textbf{Python Code:}
+		\begin{lstlisting}[language=Python]
+def quicksort(arr, low, high):
+if low < high:
+pi = partition(arr, low, high)
+quicksort(arr, low, pi - 1)
+quicksort(arr, pi + 1, high)
+
+def partition(arr, low, high):
+pivot = arr[high]
+i = low - 1
+for j in range(low, high):
+if arr[j] <= pivot:
+i += 1
+arr[i], arr[j] = arr[j], arr[i]
+arr[i + 1], arr[high] = arr[high], arr[i + 1]
+return i + 1
+		\end{lstlisting}
+	\end{itemize}
+	
+\end{document}
