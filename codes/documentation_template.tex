@@ -1,0 +1,153 @@
+% Setting up the document class and basic layout
+\documentclass[11pt, a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\geometry{margin=1in}
+
+% Including essential packages for formatting and content
+\usepackage{amsmath, amssymb, mathtools}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{hyperref}
+
+% Defining custom command for function names
+\newcommand{\function}[1]{\texttt{\color{blue}\textbf{#1}}}
+
+% Setting up font package last
+\usepackage{lmodern}
+
+% Title and header setup
+\title{Program Usage Documentation}
+\author{Your Name}
+\date{\today}
+
+\begin{document}
+	
+	\maketitle
+	
+	\section*{Program Usage Documentation}
+	
+	% General Overview
+	\subsection*{General Overview}
+	This document provides comprehensive guidance on using the program suite, designed for numerical computations across multiple platforms. The suite includes functions for basic arithmetic operations, matrix manipulations, and data analysis. It is intended for researchers and developers requiring reliable tools for scientific computing tasks.
+	
+	The functions are implemented to ensure flexibility and efficiency, with this documentation focusing on their usage, inputs, outputs, and expected results, following a structure similar to MATLAB function documentation.
+	
+	% Individual Function Descriptions
+	\subsection*{Function Descriptions}
+	
+	\subsubsection*{\function{sum\_of\_squares}}
+	\paragraph*{Purpose}
+	Computes the sum of squares of integers from 1 to $n$.
+	
+	\paragraph*{Syntax}
+	\begin{itemize}
+		\item Python: \function{sum\_of\_squares(n)}
+		\item MATLAB: \function{sumOfSquares(n)}
+		\item C: \function{sumOfSquares(int n)}
+	\end{itemize}
+	
+	\paragraph*{Input Parameters}
+	\begin{itemize}
+		\item \texttt{n}: A positive integer specifying the upper limit of the range.
+	\end{itemize}
+	
+	\paragraph*{Output}
+	\begin{itemize}
+		\item Returns the sum of squares of integers from 1 to $n$.
+	\end{itemize}
+	
+	\paragraph*{Example Usage}
+	\begin{itemize}
+		\item Input: \texttt{n = 5}
+		\item Output: $1^2 + 2^2 + 3^2 + 4^2 + 5^2 = 55$
+	\end{itemize}
+	
+	\subsubsection*{\function{transpose\_matrix}}
+	\paragraph*{Purpose}
+	Computes the transpose of a given matrix.
+	
+	\paragraph*{Syntax}
+	\begin{itemize}
+		\item Python: \function{transpose\_matrix(matrix)}
+		\item MATLAB: \function{transposeMatrix(matrix)}
+		\item C: \function{transposeMatrix(int rows, int cols, int matrix[rows][cols], int result[cols][rows])}
+	\end{itemize}
+	
+	\paragraph*{Input Parameters}
+	\begin{itemize}
+		\item \texttt{matrix}: A 2D array/matrix of numbers.
+		\item \texttt{rows}, \texttt{cols} (C only): Dimensions of the input matrix.
+	\end{itemize}
+	
+	\paragraph*{Output}
+	\begin{itemize}
+		\item Returns the transposed matrix.
+	\end{itemize}
+	
+	\paragraph*{Example Usage}
+	\begin{itemize}
+		\item Input Matrix: $\begin{bmatrix} 1 & 2 & 3 \\ 4 & 5 & 6 \end{bmatrix}$
+		\item Output: $\begin{bmatrix} 1 & 4 \\ 2 & 5 \\ 3 & 6 \end{bmatrix}$
+	\end{itemize}
+	
+	% Usage Results
+	\subsection*{Usage Results}
+	This section presents sample outputs and performance metrics for the functions described above.
+	
+	\subsubsection*{Sample Outputs}
+	\begin{itemize}
+		\item \textbf{\function{sum\_of\_squares}}:
+		\begin{itemize}
+			\item Input: \texttt{n = 5}
+			\item Expected Output: $55$
+		\end{itemize}
+		\item \textbf{\function{transpose\_matrix}}:
+		\begin{itemize}
+			\item Input Matrix: $\begin{bmatrix} 1 & 2 & 3 \\ 4 & 5 & 6 \end{bmatrix}$
+			\item Expected Output: $\begin{bmatrix} 1 & 4 \\ 2 & 5 \\ 3 & 6 \end{bmatrix}$
+		\end{itemize}
+	\end{itemize}
+	
+	\subsubsection*{Performance Metrics}
+	\begin{table}[h]
+		\centering
+		\caption{Performance Metrics for Functions}
+		\begin{tabular}{lcc}
+			\toprule
+			\textbf{Function} & \textbf{Execution Time (ms)} & \textbf{Memory Usage (KB)} \\
+			\midrule
+			\function{sum\_of\_squares} (Python) & 0.12 & 512 \\
+			\function{sumOfSquares} (MATLAB) & 0.09 & 480 \\
+			\function{sumOfSquares} (C) & 0.05 & 256 \\
+			\function{transpose\_matrix} (Python) & 0.20 & 768 \\
+			\function{transposeMatrix} (MATLAB) & 0.15 & 720 \\
+			\function{transposeMatrix} (C) & 0.08 & 384 \\
+			\bottomrule
+		\end{tabular}
+	\end{table}
+	
+	\subsubsection*{Visual Examples}
+	Below are two sample outputs visualized side by side (e.g., matrix before and after transposition):
+	\begin{figure}[h]
+		\centering
+		\begin{subfigure}{0.45\textwidth}
+			\centering
+			\includegraphics[width=\linewidth]{example-image-a}
+			\caption{Original Matrix}
+		\end{subfigure}
+		\hfill
+		\begin{subfigure}{0.45\textwidth}
+			\centering
+			\includegraphics[width=\linewidth]{example-image-b}
+			\caption{Transposed Matrix}
+		\end{subfigure}
+		\caption{Visual comparison of matrix before and after transposition.}
+	\end{figure}
+	
+\end{document}
